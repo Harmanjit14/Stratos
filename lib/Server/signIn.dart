@@ -7,7 +7,7 @@ Future<int> getToken(String email, String password) async {
   );
 
   final AuthLink authLink = AuthLink(
-    getToken: () async => '',
+    getToken: () async => 'jwt',
   );
 
   final Link link = authLink.concat(_httpLink);

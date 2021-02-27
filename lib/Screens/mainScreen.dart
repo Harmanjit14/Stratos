@@ -34,7 +34,7 @@ class _MainScreenState extends State<MainScreen> {
     // pString = "Start Tracking";
     if (female == true) {
       return Container(
-        margin: EdgeInsets.fromLTRB(0, 15, 0, 15),
+        margin: EdgeInsets.fromLTRB(20, 15, 0, 15),
         child: Row(
           children: [
             Column(
@@ -107,7 +107,7 @@ class _MainScreenState extends State<MainScreen> {
                   alignment: Alignment.centerRight,
                   height: 150,
                   child: Image.asset(
-                    "lib/assets/period.gif",
+                    "lib/assets/reg.gif",
                     fit: BoxFit.fill,
                   )),
             ),
@@ -266,9 +266,64 @@ class _MainScreenState extends State<MainScreen> {
             child: periodChild(),
           ),
           Divider(),
-          RaisedButton(onPressed: (){
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>PushedPageA()));
-          }),
+          Container(
+            margin: EdgeInsets.fromLTRB(0, 10, 20, 0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 150,
+                    child: Image.asset("lib/assets/reg.gif"),
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Fitness",
+                        style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                fontSize: 24, fontWeight: FontWeight.bold)),
+                      ),
+                    ),
+                    Container(
+                      child: Text(
+                        "click the button to start tracker",
+                        style: GoogleFonts.poppins(
+                            textStyle: TextStyle(fontSize: 16)),
+                      ),
+                    ),
+                    Container(
+                      width: 200,
+                      alignment: Alignment.center,
+                      child: OutlineButton(
+                        splashColor: Colors.blueAccent[200],
+                        highlightedBorderColor: Colors.blue[700],
+                        borderSide:
+                            BorderSide(color: Colors.blue[700], width: 2),
+                        onPressed: () {
+                          //TODO
+                          // Navigator.pushNamed(context, '/fit');
+                          // getProfile();
+                        },
+                        child: Text(
+                          "Explore",
+                          style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.blue[700],
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          genderChild(),
         ],
       ),
     ));
