@@ -6,3 +6,6 @@ int height = 0;
 int weight = 0;
 bool female = true;
 String token = "";
+String mobile = "";
+String city = "";
+String state = "";

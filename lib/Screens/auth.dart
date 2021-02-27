@@ -111,7 +111,7 @@ class _AuthState extends State<Auth> {
                     alignment: Alignment.center,
                     height: MediaQuery.of(context).size.height * 0.4,
                     child: Image.asset(
-                      "assets/log.gif",
+                      "lib/assets/reg.gif",
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -266,7 +266,7 @@ class _AuthState extends State<Auth> {
                     alignment: Alignment.center,
                     height: MediaQuery.of(context).size.height * 0.4,
                     child: Image.asset(
-                      "assets/log.gif",
+                      "lib/assets/reg.gif",
                       fit: BoxFit.cover,
                     ),
                   ),

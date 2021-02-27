@@ -3,7 +3,7 @@ import 'package:graphql/client.dart';
 
 Future<int> me() async {
   final _httpLink = HttpLink(
-    'https://loca-ly.herokuapp.com/api/',
+    'https://stratos-backend.herokuapp.com/api/',
   );
 
   final AuthLink authLink = AuthLink(
@@ -20,24 +20,35 @@ Future<int> me() async {
   String getAuthToken = """
 {
   me{
-    email
-    profile{
-      name
-    }
+    name
+    Height
+    Weight
+    BMI
+    mobile
+    Age
+    Gender
+    city
+    state
   }
 }
 """;
   QueryOptions tokenGet = QueryOptions(
     document: gql(getAuthToken),
   );
-  print("\n\nstarted\n\n");
-
   QueryResult result = await _client.query(tokenGet);
   if (result.hasException) {
     print(result.exception);
     return 0;
   } else {
-    //TODO
+    name = result.data["me"]["name"];
+    height = result.data["me"]["Height"];
+    weight = result.data["me"]["Weight"];
+    bmi = result.data["me"]["BMI"];
+    mobile = result.data["me"]["mobile"];
+    city = result.data["me"]["city"];
+    state = result.data["me"]["state"];
+    female = (result.data["me"]["Gender"] == 'F') ? true : false;
+    age = result.data["me"]["Age"];
 
     return 1;
   }

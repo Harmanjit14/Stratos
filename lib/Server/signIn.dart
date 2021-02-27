@@ -3,11 +3,11 @@ import 'package:graphql/client.dart';
 
 Future<int> getToken(String email, String password) async {
   final _httpLink = HttpLink(
-    'https://loca-ly.herokuapp.com/api/',
+    'https://stratos-backend.herokuapp.com/api',
   );
 
   final AuthLink authLink = AuthLink(
-    getToken: () async => 'JWT $token',
+    getToken: () async => '',
   );
 
   final Link link = authLink.concat(_httpLink);
@@ -24,19 +24,20 @@ Future<int> getToken(String email, String password) async {
   }
 }
 """;
+  print(email);
+  print(password);
   MutationOptions tokenGet = MutationOptions(
-    // ignore: deprecated_member_use
     document: gql(getAuthToken),
   );
-
+  print("0");
   QueryResult result = await _client.mutate(tokenGet);
   if (result.hasException) {
+    print("2");
     print(result.exception);
     return 0;
   } else {
+    print("1");
     token = result.data["tokenAuth"]["token"];
     return 1;
   }
 }
-
-
