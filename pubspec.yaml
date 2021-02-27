@@ -50,6 +50,10 @@ flutter:
   assets:
     - lib/assets/reg.gif
     - lib/assets/tflite.tflite
+    - lib/assets/1.gif
+    - lib/assets/2.gif
+    - lib/assets/3.gif
+    - lib/assets/4.gif
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
