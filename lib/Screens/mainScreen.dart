@@ -1,6 +1,7 @@
 import 'package:Stratos/Models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class MainScreen extends StatefulWidget {
@@ -22,11 +23,132 @@ class _MainScreenState extends State<MainScreen> {
     super.dispose();
   }
 
+  String pString = "";
   Color activeColorP = Colors.black;
   String selcPeriod = "Period's are'nt Expected!";
 
   Color activeColor = Colors.green;
   String selcExercise = "You were Active this Day!";
+  Widget genderChild() {
+    // pString = "Start Tracking";
+    if (female == true) {
+      return Container(
+        margin: EdgeInsets.fromLTRB(0, 15, 0, 15),
+        child: Row(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Period Tracker!",
+                    style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Container(
+                  child: Text(
+                    "click the button to start tracker",
+                    style:
+                        GoogleFonts.poppins(textStyle: TextStyle(fontSize: 16)),
+                  ),
+                ),
+                Container(
+                  width: 200,
+                  alignment: Alignment.center,
+                  child: OutlineButton(
+                    splashColor: Colors.pink,
+                    highlightedBorderColor: Colors.pink[700],
+                    borderSide: BorderSide(color: Colors.pink[700], width: 2),
+                    onPressed: () {
+                      Alert(
+                        context: context,
+                        type: AlertType.info,
+                        title: "Add to my Calendar",
+                        desc:
+                            "Use this feature when you are on your periods so that it can track them more efficiently ",
+                        buttons: [
+                          DialogButton(
+                            highlightColor: Colors.deepPurple,
+                            child: Text(
+                              "Add",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () async {
+                              // await addPeriodInfo();
+                              // await getPeriodInfo();
+                              pString = "Done!";
+                              setState(() {});
+                              Navigator.pop(context);
+                            },
+                            color: Colors.pink,
+                          ),
+                        ],
+                      ).show();
+                    },
+                    child: Text(
+                      "Add",
+                      style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                              fontSize: 16,
+                              color: Colors.pink[700],
+                              fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: Container(
+                  alignment: Alignment.centerRight,
+                  height: 150,
+                  child: Image.asset(
+                    "lib/assets/period.gif",
+                    fit: BoxFit.fill,
+                  )),
+            ),
+          ],
+        ),
+      );
+    } else
+      return SizedBox(
+        height: 0,
+        width: double.maxFinite,
+      );
+  }
+
+  Widget periodChild() {
+    if (female == true) {
+      return RichText(
+        textAlign: TextAlign.left,
+        text: TextSpan(
+            text: "Period Tracker : ",
+            style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold)),
+            children: [
+              TextSpan(
+                text: selcPeriod,
+                style: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                        color: activeColorP)),
+              )
+            ]),
+      );
+    } else {
+      return SizedBox(
+        height: 0,
+        width: double.maxFinite,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +261,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
           Container(
-            alignment: Alignment.centerLeft,
+            alignment: Alignment.center,
             child: periodChild(),
           ),
           Divider(),
