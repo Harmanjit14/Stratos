@@ -37,19 +37,13 @@ class _PushedPageAState extends State<PushedPageA> {
   }
 
   loadModel() async {
-    return await Tflite.loadModel(
-        model: "assets/tflite.tflite");
+    return await Tflite.loadModel(model: "lib/assets/tflite.tflite");
   }
 
   @override
   Widget build(BuildContext context) {
     Size screen = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('AlignAI Arm Press'),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
       body: Stack(
         children: <Widget>[
           Camera(
