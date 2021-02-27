@@ -38,7 +38,7 @@ class _PushedPageAState extends State<PushedPageA> {
 
   loadModel() async {
     return await Tflite.loadModel(
-        model: "assets/posenet_mv1_075_float_from_checkpoints.tflite");
+        model: "assets/tflite.tflite");
   }
 
   @override
