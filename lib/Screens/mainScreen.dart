@@ -1,4 +1,5 @@
 import 'package:Stratos/Models/user.dart';
+import 'package:Stratos/Screens/page1.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -265,6 +266,9 @@ class _MainScreenState extends State<MainScreen> {
             child: periodChild(),
           ),
           Divider(),
+          RaisedButton(onPressed: (){
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>PushedPageA()));
+          }),
         ],
       ),
     ));
