@@ -3,7 +3,7 @@ import 'package:graphql/client.dart';
 
 Future<int> me() async {
   final _httpLink = HttpLink(
-    'https://stratos-backend.herokuapp.com/api/',
+    'https://stratos-backend.herokuapp.com/graphql/',
   );
 
   final AuthLink authLink = AuthLink(

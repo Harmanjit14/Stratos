@@ -58,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       body: navbar(),
       bottomNavigationBar: Container(
         //height: 100,
