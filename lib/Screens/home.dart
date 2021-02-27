@@ -9,8 +9,6 @@ enum _SelectedTab { home, health, aware, work, profile }
 
 // ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
-
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -44,6 +42,11 @@ class _HomeScreenState extends State<HomeScreen> {
           return ProfileSceen();
         }
         break;
+      case 3:
+        {
+          return ExerciseScreen();
+        }
+        break;
 
       default:
         {
@@ -75,6 +78,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
 
                 /// Likes
+                SalomonBottomBarItem(
+                  icon: Icon(Icons.fitness_center),
+                  title: Text("Exercise"),
+                  selectedColor: Colors.amber,
+                ),
                 SalomonBottomBarItem(
                   icon: Icon(Icons.local_hospital_rounded),
                   title: Text("Health"),
