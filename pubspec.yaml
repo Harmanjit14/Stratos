@@ -29,6 +29,7 @@ dependencies:
   geocoding: ^1.0.5
   google_fonts: ^1.1.2
   graphql: ^4.0.1
+  iqplayer: ^0.4.0
   rflutter_alert: ^1.1.0
   salomon_bottom_bar: ^2.0.1
   table_calendar: ^2.3.3
@@ -54,6 +55,9 @@ flutter:
     - lib/assets/2.gif
     - lib/assets/3.gif
     - lib/assets/4.gif
+    - lib/assets/diet.jpg
+    - lib/assets/period.gif
+    - lib/assets/exercise.gif
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

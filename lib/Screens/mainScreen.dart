@@ -1,4 +1,6 @@
 import 'package:Stratos/Models/user.dart';
+import 'package:Stratos/Screens/exerciseScreen.dart';
+import 'package:Stratos/Screens/fitness.dart';
 import 'package:Stratos/Screens/page1.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -107,7 +109,7 @@ class _MainScreenState extends State<MainScreen> {
                   alignment: Alignment.centerRight,
                   height: 150,
                   child: Image.asset(
-                    "lib/assets/reg.gif",
+                    "lib/assets/period.gif",
                     fit: BoxFit.fill,
                   )),
             ),
@@ -273,7 +275,7 @@ class _MainScreenState extends State<MainScreen> {
                 Expanded(
                   child: Container(
                     height: 150,
-                    child: Image.asset("lib/assets/reg.gif"),
+                    child: Image.asset("lib/assets/exercise.gif"),
                   ),
                 ),
                 Column(
@@ -304,9 +306,11 @@ class _MainScreenState extends State<MainScreen> {
                         borderSide:
                             BorderSide(color: Colors.blue[700], width: 2),
                         onPressed: () {
-                          //TODO
-                          // Navigator.pushNamed(context, '/fit');
-                          // getProfile();
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => FitnessScreen(),
+                              ));
                         },
                         child: Text(
                           "Explore",

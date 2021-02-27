@@ -1,10 +1,11 @@
+import 'package:Stratos/Screens/page1.dart';
 import 'package:Stratos/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ExerciseScreen extends StatelessWidget {
-  Widget listChild(int index) {
+  Widget listChild(int index, BuildContext context) {
     return Container(
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(blurRadius: 3, spreadRadius: 1, offset: Offset(2, 1)),
@@ -13,6 +14,13 @@ class ExerciseScreen extends StatelessWidget {
       height: 300,
       width: 300,
       child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => PushedPageA(),
+              ));
+        },
         child: Image.asset(
           "lib/assets/$index.gif",
           fit: BoxFit.cover,
@@ -51,11 +59,11 @@ class ExerciseScreen extends StatelessWidget {
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               children: [
-                listChild(1),
-                listChild(2),
-                listChild(3),
-                listChild(4),
-                listChild(1),
+                listChild(1, context),
+                listChild(2, context),
+                listChild(3, context),
+                listChild(4, context),
+                listChild(1, context),
               ],
             ),
           ),
