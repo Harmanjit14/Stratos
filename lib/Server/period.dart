@@ -59,3 +59,40 @@ Future<int> getPeriodInfo() async {
     }
   }
 }
+
+Future<int> addPeriodInfo() async {
+  final _httpLink = HttpLink(
+    'https://stratos-backend.herokuapp.com/graphql/',
+  );
+
+  final AuthLink authLink = AuthLink(
+    getToken: () async => 'JWT $token',
+  );
+
+  final Link link = authLink.concat(_httpLink);
+  GraphQLClient _client = GraphQLClient(
+    cache: GraphQLCache(),
+    link: link,
+  );
+  var temp = DateTime.now();
+  String createMutation = '''
+  mutation{
+     addPeriodinfo(date:${temp.day},month:${temp.month},year:${temp.year}){
+     __typename
+   }
+  }
+''';
+  MutationOptions createOptions = MutationOptions(
+    document: gql(createMutation),
+  );
+  QueryResult result = await _client.mutate(createOptions);
+
+  if (result.hasException) {
+    print("failed");
+    print(result.exception);
+    return 0;
+  } else {
+    print("done");
+    return 1;
+  }
+}

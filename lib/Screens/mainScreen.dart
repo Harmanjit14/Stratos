@@ -81,8 +81,8 @@ class _MainScreenState extends State<MainScreen> {
                                   TextStyle(color: Colors.white, fontSize: 20),
                             ),
                             onPressed: () async {
-                              // await addPeriodInfo();
-                              // await getPeriodInfo();
+                              await addPeriodInfo();
+                              await getPeriodInfo();
                               pString = "Done!";
                               setState(() {});
                               Navigator.pop(context);
