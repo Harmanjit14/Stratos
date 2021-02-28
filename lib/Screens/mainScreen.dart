@@ -1,11 +1,11 @@
 import 'package:Stratos/Models/user.dart';
-import 'package:Stratos/Screens/exerciseScreen.dart';
 import 'package:Stratos/Screens/fitness.dart';
-import 'package:Stratos/Screens/page1.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:Stratos/Server/period.dart';
+import 'package:Stratos/Server/fit.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -223,8 +223,8 @@ class _MainScreenState extends State<MainScreen> {
                 }
                 setState(() {});
               },
-              events: {},
-              holidays: {},
+              events: periodDays,
+              holidays: exerciseDays,
               calendarController: _calendarController,
               calendarStyle: CalendarStyle(
                 holidayStyle: TextStyle(color: Colors.green[700], fontSize: 20),

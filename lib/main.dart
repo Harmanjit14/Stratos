@@ -1,6 +1,4 @@
 import 'package:Stratos/Screens/auth.dart';
-import 'package:Stratos/Screens/home.dart';
-import 'package:Stratos/Screens/mainScreen.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
