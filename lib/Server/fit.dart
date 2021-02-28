@@ -33,11 +33,8 @@ Future<int> getExercise() async {
     return 0;
   } else {
     try {
-      int day = result.data["getexerciseinfo"][0]["date"];
-      int mon = result.data["getexerciseinfo"][0]["month"];
-      int yr = result.data["getexerciseinfo"][0]["year"];
-      DateTime x = DateTime(yr, mon, day);
-      exerciseDays[x] = ["P"];
+      
+      //exerciseDays[x] = ["P"];
       return 1;
     } catch (e) {
       return 1;
