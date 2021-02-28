@@ -4,6 +4,7 @@ import 'package:Stratos/Screens/exerciseScreen.dart';
 import 'package:Stratos/Screens/mainScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'health.dart';
 
 enum _SelectedTab { home, health, aware, work, profile }
 
@@ -39,12 +40,12 @@ class _HomeScreenState extends State<HomeScreen> {
         break;
       case 2:
         {
-          return ProfileSceen();
+          return HealthPage();
         }
         break;
       case 3:
         {
-          return ExerciseScreen();
+          return ProfileSceen();
         }
         break;
 
