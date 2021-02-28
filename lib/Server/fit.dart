@@ -18,9 +18,8 @@ Future<int> getExercise() async {
   String createMutation = '''
     {
       getexerciseinfo{
-        date
-        month
-        year
+        exerciseType
+        added
       }
     }
 ''';
@@ -34,7 +33,6 @@ Future<int> getExercise() async {
     return 0;
   } else {
     try {
-      print(result.data.toString());
       int day = result.data["getexerciseinfo"][0]["date"];
       int mon = result.data["getexerciseinfo"][0]["month"];
       int yr = result.data["getexerciseinfo"][0]["year"];

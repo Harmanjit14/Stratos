@@ -1,5 +1,7 @@
 import 'package:Stratos/Models/user.dart';
 import 'package:graphql/client.dart';
+import 'package:Stratos/Server/period.dart';
+import 'package:Stratos/Server/fit.dart';
 
 Future<int> getToken(String email, String password) async {
   final _httpLink = HttpLink(
@@ -38,6 +40,8 @@ Future<int> getToken(String email, String password) async {
   } else {
     print("1");
     token = result.data["tokenAuth"]["token"];
+    await getPeriodInfo();
+    // await getExercise();
     return 1;
   }
 }

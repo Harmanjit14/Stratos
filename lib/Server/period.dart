@@ -36,7 +36,6 @@ Future<int> getPeriodInfo() async {
     return 0;
   } else {
     try {
-      print(result.data.toString());
       int day = result.data["getperiodinfo"][0]["date"];
       int mon = result.data["getperiodinfo"][0]["month"];
       int yr = result.data["getperiodinfo"][0]["year"];
