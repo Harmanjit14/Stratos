@@ -1,6 +1,6 @@
 # **Stratos**
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=eyGkHyB9YPA&t=31s)
+[![Watch the video](https://img.youtube.com/vi/watch?v=eyGkHyB9YPA&t/0.jpg)](https://www.youtube.com/watch?v=eyGkHyB9YPA&t)
 <br></br>
 ### Project Domain:
 An android app made on Flutter, Backend made on Django and GraphQL, Portals made on HTML, CSS, Javascript 
