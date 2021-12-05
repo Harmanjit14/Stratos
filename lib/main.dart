@@ -1,4 +1,5 @@
 import 'package:Stratos/Screens/auth.dart';
+import 'package:Stratos/Screens/home.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
@@ -20,12 +21,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Stratos',
+      title: 'Fitzy',
       theme: ThemeData(
         primarySwatch: Colors.cyan,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Auth(),
+      home: HomeScreen(),
     );
   }
 }
